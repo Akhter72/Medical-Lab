@@ -10,16 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class BloodTestResult {
+public class BoneMarrorTestReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double rbcCount;
-    private double wbcCount;
-    private double platelets;
-    private double hemoglobin;
-    private double hematocrit;
+    private double blasts;
+    private double lymphocytes;
+    private double promyelocytes;
+    private double plasmaCells;
+    private double monocytes;
 }

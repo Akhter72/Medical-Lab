@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class CovidTest {
+public class CovidTestReport {
     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;
     private String specimentype;

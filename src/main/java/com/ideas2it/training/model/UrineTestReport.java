@@ -4,16 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UrineTestResult {
+public class UrineTestReport {
     @Id
     private long id;
     private double rbcCount;

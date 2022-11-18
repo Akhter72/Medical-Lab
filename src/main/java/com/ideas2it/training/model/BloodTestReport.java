@@ -13,14 +13,13 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LiverTest {
+public class BloodTestReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double prothrombinTime;
-    private double billrubin;
-    private double albubin;
-    private double totalProtien;
-
-
+    private double rbcCount;
+    private double wbcCount;
+    private double platelets;
+    private double hemoglobin;
+    private double hematocrit;
 }
