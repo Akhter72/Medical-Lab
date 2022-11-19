@@ -5,26 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LiverTestReport {
+public class TestType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private double prothrombinTime;
-    private double billrubin;
-    private double albubin;
-    private double totalProtien;
+    private long TestTypeId;
+    private String name;
+    private String code;
+    private String description;
     private String createdAt;
     private String modifiedAt;
-    private String isDeleted;
+    private boolean isDeleted;
 
-    @OneToOne
-    @JoinColumn(name="booking_id", nullable=false)
-    private Booking booking;
-
-
+    @OneToMany(mappedBy = "testType")
+    private List<LabTest> labTests;
 }

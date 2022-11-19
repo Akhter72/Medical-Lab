@@ -5,26 +5,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class LiverTestReport {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private double prothrombinTime;
-    private double billrubin;
-    private double albubin;
-    private double totalProtien;
+    private long userId;
+    private String firstname;
+    private String lastname;
+    private String dob;
+    private String email;
+    private String gender;
+    private String phoneNo;
+    private String location;
     private String createdAt;
     private String modifiedAt;
     private String isDeleted;
 
-    @OneToOne
-    @JoinColumn(name="booking_id", nullable=false)
-    private Booking booking;
-
-
+    @OneToMany(mappedBy = "user")
+    private List<Booking> bookings;
 }
