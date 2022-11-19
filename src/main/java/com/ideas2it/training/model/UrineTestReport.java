@@ -4,16 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UrineTestResult {
+public class UrineTestReport {
     @Id
     private long id;
     private double rbcCount;
@@ -21,6 +18,11 @@ public class UrineTestResult {
     private double phLevel;
     private boolean nitriteNegative;
     private boolean leukocyteEsteraseNegative;
-//    @OneToOne(mappedBy = "urineTestResult")
-//    private Booking booking;
+    private String createdAt;
+    private String modifiedAt;
+    private String isDeleted;
+
+    @OneToOne
+    @JoinColumn(name="booking_id", nullable=false)
+    private Booking booking;
 }

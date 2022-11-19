@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -22,6 +19,13 @@ public class StoolTestReport {
     private boolean protozoaNegative;
     private boolean macrophagesNegative;
     private boolean fatBodiesNegative;
+    private String createdAt;
+    private String modifiedAt;
+    private String isDeleted;
+
+    @OneToOne
+    @JoinColumn(name="booking_id", nullable=false)
+    private Booking booking;
 
 
 

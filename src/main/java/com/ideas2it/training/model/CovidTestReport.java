@@ -4,31 +4,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import com.ideas2it.training.model.Lab;
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class Staff {
+public class CovidTestReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long staffId;
-    private String fullname;
-    private String address;
-    private String phoneNo;
-    private String email;
+    private long id ;
+    private String specimenType;
+    private String testPrinciples;
+    private boolean testPositive;
     private String createdAt;
     private String modifiedAt;
     private String isDeleted;
 
-    @OneToOne(mappedBy = "staff")
+    @OneToOne
+    @JoinColumn(name="booking_id", nullable=false)
     private Booking booking;
-
-    @ManyToOne
-    @JoinColumn(name = "lab_id")
-    private Lab lab;
 
 }
